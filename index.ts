@@ -1,29 +1,9 @@
-class Animal {
-  name: string; 
-  constructor(theName:string){this.name = this.theName;}
-  move(distanceInMeters:number= 0){
-    console.log(`${this.name} moved ${distanceInMeters}m`)
+class Octopus {
+  readonly name: string;
+  readonly numberOfLegs: number = 8;
+  constructor(theName: string) {
+    this.name = theName;
   }
 }
-class Snake extends Animal {
-    constructor(name: string) { super(name); }
-    move(distanceInMeters = 5) {
-        console.log("Slithering...");
-        super.move(distanceInMeters);
-    }
-}
-
-class Horse extends Animal {
-    constructor(name: string) { super(name); }
-    move(distanceInMeters = 45) {
-        console.log("Galloping...");
-        super.move(distanceInMeters);
-    }
-}
-
-let sam = new Snake("Sammy the Python");
-let tom: Animal = new Horse("Tommy the Palomino");
-
-sam.move();
-tom.move(34);
-
+let dad = new Octopus("Man with the 8 strong legs");
+dad.name = "Man with the 3-piece suit"; // error! name is readonly.
